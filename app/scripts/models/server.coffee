@@ -1,14 +1,7 @@
 'use strict';
 
 class Demo.Models.Server extends Backbone.Model
-  url: '',
-
-  initialize: () ->
-
   defaults:
-    name: ''
-
-  validate: (attrs, options) ->
-
-  parse: (response, options) ->
-    response
+    on: true
+  initialize: ->
+    @layers = new Demo.Collections.Layers(@get('layers'))

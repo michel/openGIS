@@ -19,11 +19,10 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-
-        <div class="container">
+        <div id="container">
+          <div id="menu"></div>
           <div id="map"></div>
         </div>
-
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
@@ -39,6 +38,7 @@
         <script src="bower_components/jquery/dist/jquery.js"></script>
         <script src="bower_components/underscore/underscore.js"></script>
         <script src="bower_components/backbone/backbone.js"></script>
+        <script src="bower_components/backbone.marionette/lib/backbone.marionette.js"></script>
         <!-- endbuild -->
 
         <!-- build:js scripts/plugins.js -->
@@ -64,6 +64,11 @@
         <script src="scripts/collections/layers.js"></script>
         <script src="scripts/models/server.js"></script>
         <script src="scripts/collections/servers.js"></script>
+        <script src="scripts/views/menu.js"></script>
+        <script src="scripts/routes/map.js"></script>
+        <script src="scripts/views/menu_button.js"></script>
+        <script src="scripts/views/servers.js"></script>
+        <script src="scripts/views/layers.js"></script>
         <!-- endbuild -->
 </body>
 </html>

@@ -9,5 +9,7 @@
     "modernizr": "~2.7.1",
     "openlayers": "~2.13.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "backbone.marionette": "~2.1.0"
+  }
 }

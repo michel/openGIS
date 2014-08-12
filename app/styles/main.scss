@@ -1,12 +1,115 @@
 $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
 @import 'sass-bootstrap/lib/bootstrap';
+@import 'sass-bootstrap/lib/glyphicons';
 
-html, body{
+html, body {
   margin: 0;
+  font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+}
+
+#menu-content {
+  color: #fff;
+  overflow: hidden;
+  width: 0px;
+  background: #000;
+  height: 100%;
+  z-index: 100;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  position: absolute;
+  transition: width 0.5s ease;
+  background-color:rgba(0,0,0,0.8);
+  ul#servers {
+    margin: 0px;
+    margin-top: 80px;
+    padding: 0px;
+    list-style-type: none;
+
+    li.server {
+      font-size: 18px;
+      letter-spacing: 5px;
+      display: block;
+        margin:0px;
+        padding: 0px;
+      text-align: center;
+      .label {
+        display: block;
+        margin:0px;
+        padding: 10px;
+        background: #000;
+      }
+
+    }
+    ul.layers {
+      text-align: left;
+      list-style-type: none;
+      letter-spacing: normal;
+      margin: 0px;
+      padding: 0px;
+      li {
+        font-size: 16px;
+        display: block;
+        background: none;
+      }
+    }
+
+  }
+  &.open {
+    width: 300px;
+  }
+  #menu-button {
+    left: 224px;
+  }
+}
+
+#menu-button {
+  background: #000;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  font-size: 25px;
+  margin: 10px;
+  padding: 10px 15px 10px 15px;
+  border-radius: 5px;
+  z-index: 1000;
+  color: #fff;
+  background-color:rgba(0,0,0,0.8);
+  transition: background-color 0.5s ease;
+  &:hover {
+    color: #000;
+    background: #fff;
+    opacity: 0.8;
+    cursor: pointer;
+  }
+}
+
+div.olMapViewport {
+  z-index: 0;
+ }
+
+#map div.olControlZoom {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  left: auto;
+  a {
+    background: #000;
+    opacity: 0.8;
+    transition: background-color 0.5s ease;
+    &:hover {
+      color: #000;
+      background: #fff;
+      opacity: 0.8;
+      cursor: pointer;
+    }
+  }
+
 }
 
 #map {
+  z-index: 0;
   background: #fff;
   position: absolute;
   top: 0px;

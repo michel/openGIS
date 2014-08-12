@@ -5,7 +5,18 @@ var lrSnippet = require('connect-livereload')({port: LIVERELOAD_PORT});
 var mountFolder = function (connect, dir) {
     return connect.static(require('path').resolve(dir));
 };
-
+var pushStateHook = function (url) {
+  var path = require('path');
+  var request = require('request'); // Need to be added into package.json
+  return function (req, res, next) {
+    var ext = path.extname(req.url);
+    if ((ext == "" || ext === ".html") && req.url != "/") {
+      req.pipe(request(url)).pipe(res);
+    } else {
+      next();
+    }
+  };
+};
 // # Globbing
 // for performance reasons we're only matching one level down:
 // 'test/spec/{,*/}*.js'
@@ -79,6 +90,7 @@ module.exports = function (grunt) {
                     middleware: function (connect) {
                         return [
                             lrSnippet,
+                            pushStateHook("http://localhost:9000"),
                             mountFolder(connect, '.tmp'),
                             mountFolder(connect, yeomanConfig.app)
                         ];
