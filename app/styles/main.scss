@@ -4,7 +4,8 @@ $icon-font-path: "../bower_components/sass-bootstrap/fonts/";
 
 html, body {
   margin: 0;
-  font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+  font-family: "Helvetica Neue";
+  font-weight: lighter;
 }
 
 #menu-content {
@@ -27,39 +28,49 @@ html, body {
     list-style-type: none;
 
     li.server {
-      font-size: 18px;
-      letter-spacing: 5px;
+      font-size: 20px;
       display: block;
         margin:0px;
         padding: 0px;
       .label {
+        font-weight: normal;
         display: block;
         margin:0px;
         padding: 10px;
-        background: #000;
+        background-color: rgba(0,0,0,0.5);
         text-align: left;
+        font-size: 18px;
       }
     }
 
     ul.layers {
       text-align: left;
       list-style-type: none;
-      letter-spacing: normal;
       margin: 0px;
       padding: 0px;
       li {
+        padding: 8px;
         font-size: 16px;
         display: block;
         background: none;
+        padding-left: 20px;
+        padding-right: 20px;
+        &:hover {
+          background-color: rgba(0,0,0,0.5);
+        }
+        span {
+          font-size: 20px;
+          float: right;
+        }
       }
     }
 
   }
   &.open {
-    width: 300px;
+    width: 320px;
   }
   #menu-button {
-    left: 224px;
+    left: 240px;
   }
 }
 
