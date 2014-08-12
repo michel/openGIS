@@ -1,0 +1,28 @@
+$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
+
+@import 'sass-bootstrap/lib/bootstrap';
+
+html, body{
+  margin: 0;
+}
+
+#map {
+  background: #fff;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+}
+
+#OpenLayers_Control_LayerSwitcher_24_layersDiv {
+    opacity: 0.9;
+    &.layersDiv {
+      background: #000;
+      border-top-left-radius:1em;
+      border-bottom-left-radius:1em;
+    }
+
+}
+

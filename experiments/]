@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Experiment</title>
+    <style>
+      html, body, #map {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+    <script src="OpenLayers.js"></script>
+    <script>
+    OpenLayers.ProxyHost = "proxy.cgi?url=";
+    var map;
+
+    function addWMSLayer(url, layer_name) {
+      return (new OpenLayers.Layer.WMS( layer_name, { layers: layer_name, format: "image/png", srs: "EPSG:28992", styles: "" }));
+    }
+
+    function load() {
+      var map = new OpenLayers.Map('map', { maxExtent: new OpenLayers.Bounds(10000.0, 305000.0, 280000.0, 619000.0), projection: new OpenLayers.Projection("EPSG:28992") });
+      var wms_url = "http://rk-pub.idgis.nl/rk_services_pub/services/WMS-risicokaart";
+
+      var layers = [];
+      var items = ['zone_defensie_a','zone_defensie_b','zone_defensie_c','vliegveldcontour','p_LPG']
+      var i = 0;
+      for ( ; item = items[i++] ; ){
+        layer =  
+        map.addLayer(layer);
+      }
+
+
+
+      map.setCenter(new OpenLayers.LonLat(445463, 156271), 1);
+
+      map.addControl(new OpenLayers.Control.LayerSwitcher());
+      map.zoomToMaxExtent();
+    }
+
+  </script>
+  </head>
+  <body onload="load()">
+    <div id="map"> </div>
+  </body>
+</html>
+
