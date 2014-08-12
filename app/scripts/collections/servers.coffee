@@ -12,13 +12,23 @@ class Demo.Collections.Servers extends Backbone.Collection
           {
             name: 'Defensie zone'
             layer_name: ['zone_defensie_a','zone_defensie_b','zone_defensie_c']
-            layer_url: "http://rk-pub.idgis.nl/rk_services_pub/services/WMS-risicokaart"
           },
           {
             name: 'Inrichtingen'
             layer_name: ['p_LPG','p_opslag','p_ammoniak','p_vervoer']
-            layer_url: "http://rk-pub.idgis.nl/rk_services_pub/services/WMS-risicokaart"
           }
         ]
+      },
+      {
+        name: 'milieu-info.nl (Nazca)'
+        url: "http://www.milieu-info.nl/mapserver/mapserv.exe?map%3DD:%5Cinetpub%5Cnazca%5CProvincie_Noord_Holland%5CMDIJmondWaterland%5C_mapfile%5Cnazca_bis_wms.map"
+        layers: [
+          {
+            name: 'Onderzoek'
+            layer_name: 'Onderzoek'
+          }
+        ]
+
       }
+
     ]

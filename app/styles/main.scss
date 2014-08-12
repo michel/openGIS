@@ -1,7 +1,6 @@
-$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
+$icon-font-path: "../bower_components/sass-bootstrap/fonts/";
 
 @import 'sass-bootstrap/lib/bootstrap';
-@import 'sass-bootstrap/lib/glyphicons';
 
 html, body {
   margin: 0;
@@ -33,15 +32,15 @@ html, body {
       display: block;
         margin:0px;
         padding: 0px;
-      text-align: center;
       .label {
         display: block;
         margin:0px;
         padding: 10px;
         background: #000;
+        text-align: left;
       }
-
     }
+
     ul.layers {
       text-align: left;
       list-style-type: none;

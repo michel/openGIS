@@ -15,11 +15,11 @@ window.Demo =
       Demo.App.Menu.show menuView
       Demo.Router = new Demo.Routers.Map()
       Demo.mappingModule(OpenLayers)
-      Backbone.history.start({pushState: true})
+      Backbone.history.start({pushState: false})
      @App
 
   mappingModule: (ol) ->
-    @map = new ol.Map("map",
+    @Map = new ol.Map("map",
       maxExtent: new ol.Bounds(10000.0, 305000.0, 280000.0, 619000.0)
       projection: new ol.Projection("EPSG:28992")
     )
@@ -58,12 +58,12 @@ window.Demo =
       displayInLayerSwitcher: false
     )
 
-    @map.addLayer(osm_rd_tms_layer)
-    for model in Demo.Collections.Layers.DemoLayers().models
-      layer = new ol.Layer.WMS(model.get('name'), model.get('layer_url'), isBaseLayer: false, layers: model.get('layer_name'), format: "image/png", srs: "EPSG:28992", styles: "" , transitionEffect: "resize", transparent: true)
-      @map.addLayer(layer)
+    @Map.addLayer(osm_rd_tms_layer)
+    #for model in Demo.Collections.Layers.DemoLayers().models
+      #layer = new ol.Layer.WMS(model.get('name'), model.get('layer_url'), isBaseLayer: false, layers: model.get('layer_name'), format: "image/png", srs: "EPSG:28992", styles: "" , transitionEffect: "resize", transparent: true)
+      #@map.addLayer(layer)
 
-    @map.zoomTo(4)
+    @Map.zoomTo(4)
     @Servers = Demo.Collections.Servers.DemoServers()
 
 $ ->

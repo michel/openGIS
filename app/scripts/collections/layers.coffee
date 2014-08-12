@@ -3,9 +3,6 @@
 class Demo.Collections.Layers extends Backbone.Collection
   model: Demo.Models.Layer
 
-  initialize: (res,options) ->
-    super
-
   @DemoLayers: ->
     demo_layers = [
       {
