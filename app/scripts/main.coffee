@@ -59,11 +59,18 @@ window.Demo =
     )
 
     @Map.addLayer(osm_rd_tms_layer)
-    #for model in Demo.Collections.Layers.DemoLayers().models
-      #layer = new ol.Layer.WMS(model.get('name'), model.get('layer_url'), isBaseLayer: false, layers: model.get('layer_name'), format: "image/png", srs: "EPSG:28992", styles: "" , transitionEffect: "resize", transparent: true)
+    base_layer = new OpenLayers.Layer.WMS('Buisleidingen', "http://rk-pub.idgis.nl/rk_services_pub/services/WMS-risicokaart", isBaseLayer: false, layers: ['trns_buisleidingen'], format: "image/png", srs: "EPSG:28992", styles: "" , transitionEffect: "resize", transparent: true, INITAL_LAYER: true)
+    Demo.Map.addLayer(base_layer)
+    #layer = new ol.Layer.WMS(model.get('name'), model.get('layer_url'), isBaseLayer: false, layers: model.get('layer_name'), format: "image/png", srs: "EPSG:28992", styles: "" , transitionEffect: "resize", transparent: true)
       #@map.addLayer(layer)
 
-    @Map.zoomTo(4)
+    point = new OpenLayers.LonLat(105206.800, 499184.800)
+    @Map.setCenter(point, 8)
+    @Map.events.register "click", @Map, (e) =>
+      position = @Map.getLonLatFromPixel(e.xy);
+      console.log position.lon.toFixed(3) + ', ' + position.lat.toFixed(3)
+
+
     @Servers = Demo.Collections.Servers.DemoServers()
 
 $ ->

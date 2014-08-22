@@ -26,7 +26,8 @@
     "time-grunt": "~0.2.8",
     "jshint-stylish": "~0.1.5",
     "grunt-connect-proxy": "~0.1.10",
-    "request": "~2.40.0"
+    "request": "~2.40.0",
+    "grunt-s3": "~0.2.0-alpha.3"
   },
   "engines": {
     "node": ">=0.10.0"

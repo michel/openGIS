@@ -27,6 +27,8 @@ class Demo.Views.Layers extends Backbone.Marionette.CollectionView
 
   renderMap: ->
     for layer in Demo.Map.layers
+      if layer && layer.params && layer.params['INITAL_LAYER'] == true
+        Demo.Map.removeLayer layer
       if layer && layer.params && layer.params['SERVER'] == @server
         Demo.Map.removeLayer layer
 

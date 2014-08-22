@@ -6,16 +6,16 @@ var mountFolder = function (connect, dir) {
     return connect.static(require('path').resolve(dir));
 };
 var pushStateHook = function (url) {
-  var path = require('path');
-  var request = require('request'); // Need to be added into package.json
-  return function (req, res, next) {
-    var ext = path.extname(req.url);
-    if ((ext == "" || ext === ".html") && req.url != "/") {
-      req.pipe(request(url)).pipe(res);
-    } else {
-      next();
-    }
-  };
+    var path = require('path');
+    var request = require('request'); // Need to be added into package.json
+    return function (req, res, next) {
+        var ext = path.extname(req.url);
+        if ((ext === '' || ext === '.html') && req.url !== '/') {
+            req.pipe(request(url)).pipe(res);
+        } else {
+            next();
+        }
+    };
 };
 // # Globbing
 // for performance reasons we're only matching one level down:
@@ -90,7 +90,7 @@ module.exports = function (grunt) {
                     middleware: function (connect) {
                         return [
                             lrSnippet,
-                            pushStateHook("http://localhost:9000"),
+                            pushStateHook('http://localhost:9000'),
                             mountFolder(connect, '.tmp'),
                             mountFolder(connect, yeomanConfig.app)
                         ];
@@ -281,7 +281,7 @@ module.exports = function (grunt) {
                     src: [
                         '<%= yeoman.dist %>/scripts/{,*/}*.js',
                         '<%= yeoman.dist %>/styles/{,*/}*.css',
-                        '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}',
+                        //'<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}',
                         '/styles/fonts/{,*/}*.*',
                         'bower_components/sass-bootstrap/fonts/*.*'
                     ]

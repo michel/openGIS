@@ -10,7 +10,7 @@ html, body {
 
 #menu-content {
   color: #fff;
-  overflow: hidden;
+  overflow-x: hidden;
   width: 0px;
   background: #000;
   height: 100%;
@@ -21,9 +21,17 @@ html, body {
   position: absolute;
   transition: width 0.5s ease;
   background-color:rgba(0,0,0,0.8);
+  #logo {
+    background: #fff;
+    height: 80px;
+    padding-top: 10px;
+    padding-left: 15px;
+    img {
+      width: 200px;
+    }
+  }
   ul#servers {
     margin: 0px;
-    margin-top: 80px;
     padding: 0px;
     list-style-type: none;
 
@@ -50,7 +58,7 @@ html, body {
       padding: 0px;
       li {
         padding: 8px;
-        font-size: 16px;
+        font-size: 14px;
         display: block;
         background: none;
         padding-left: 20px;
