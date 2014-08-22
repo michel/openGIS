@@ -8,4 +8,4 @@ Libraries used:
  * marrionette.js
  * openlayers.js
 
-![image]()
+![image](https://raw.githubusercontent.com/michel/openGIS/master/doc/screenshot.png)
